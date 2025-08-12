@@ -8,44 +8,57 @@ function validaproc() {
     let somaMedias = 0;
     let totalAlunos = alunosTurma1 + alunosTurma2 + alunosTurma3;
 
-    
-    for (let i = 0; i < alunosTurma1; i++) {
-        const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-      
-        const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-        const media = (nota1 + nota2) / 2;
+    let i = 0;
+    if (alunosTurma1 > 0) {
+        do {
+            const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const media = (nota1 + nota2) / 2;
 
-        console.log("Turma 1 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
+            console.log("Turma 1 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
 
-        somaMedias += media;
-        if (media >= 7) aprovados++;
-        else reprovados++;
+            somaMedias += media;
+            if (media >= 7) aprovados++;
+            else reprovados++;
+            
+            i++;
+        } while (i < alunosTurma1);
+    }
+
+  
+    i = 0;
+    if (alunosTurma2 > 0) {
+        do {
+            const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const media = (nota1 + nota2) / 2;
+
+            console.log("Turma 2 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
+
+            somaMedias += media;
+            if (media >= 7) aprovados++;
+            else reprovados++;
+            
+            i++;
+        } while (i < alunosTurma2);
     }
 
     
-    for (let i = 0; i < alunosTurma2; i++) {
-        const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-        const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-        const media = (nota1 + nota2) / 2;
+    i = 0;
+    if (alunosTurma3 > 0) {
+        do {
+            const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
+            const media = (nota1 + nota2) / 2;
 
-        console.log("Turma 2 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
+            console.log("Turma 3 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
 
-        somaMedias += media;
-        if (media >= 7) aprovados++;
-        else reprovados++;
-    }
-
-    
-    for (let i = 0; i < alunosTurma3; i++) {
-        const nota1 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-        const nota2 = parseFloat((Math.random() * 6 + 4).toFixed(1));
-        const media = (nota1 + nota2) / 2;
-
-        console.log("Turma 3 - Aluno " + (i + 1) + ": Nota 1 = " + nota1 + ", Nota 2 = " + nota2 + ", Média = " + media.toFixed(1));
-
-        somaMedias += media;
-        if (media >= 7) aprovados++;
-        else reprovados++;
+            somaMedias += media;
+            if (media >= 7) aprovados++;
+            else reprovados++;
+            
+            i++;
+        } while (i < alunosTurma3);
     }
 
     const mediaGeral = (somaMedias / totalAlunos).toFixed(1);
